@@ -70,7 +70,7 @@ export default class CreateUser extends Component{
             u_status:this.state.u_status
         }
 
-        axios.post('http://localhost:4000/users/register',newUser)
+        axios.post('/users/register',newUser)
         .then(res => console.log(res.data));
 
         this.setState({
