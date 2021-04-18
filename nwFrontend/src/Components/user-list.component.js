@@ -18,7 +18,7 @@ const Hackers = props=>(
 )
 
 export function deleteRow(id){
-    axios.get('http://localhost:4000/users/delete/'+id);
+    axios.get('/users/delete/'+id);
 }
 
 export function statusChange(id){
@@ -38,7 +38,7 @@ export function sendMails(){
         const obj = {
             ids: status
         }
-        axios.post('http://localhost:4000/users/sendmail/',obj)
+        axios.post('/users/sendmail/',obj)
         .then(res=>console.log(res.data));
     }
 }
@@ -50,7 +50,7 @@ export default class RegisteredUsers extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4000/users/')
+        axios.get('/users/')
         .then(response => {
             this.setState({userList : response.data});
         })
@@ -60,7 +60,7 @@ export default class RegisteredUsers extends Component{
     }
 
     componentDidUpdate(){
-        axios.get('http://localhost:4000/users/')
+        axios.get('/users/')
         .then(response => {
             this.setState({userList : response.data});
         })
