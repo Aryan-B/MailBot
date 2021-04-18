@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "frontend": "cd nwFrontend && npm run start",
+    "api": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
     "heroku-postbuild": "cd nwFrontend && npm install && npm run build"
   },
   "keywords": [],
