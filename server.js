@@ -150,7 +150,7 @@ app.use('/users',userRoutes);
 
 if(process.env.NODE_ENV==='production'){
     app.use(express.static('nwFrontend/build'));
-    app.get('/*',(req,res)=>{
+    app.get('/users/*',(req,res)=>{
         res.sendFile(path.join(__dirname,'nwFrontend','build','index.html'));
     });
 }
