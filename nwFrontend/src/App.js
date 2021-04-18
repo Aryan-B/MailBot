@@ -13,8 +13,8 @@ class App extends Component{
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            <img src={'./logo192.png'} width="80" height="80" alt=""/>
+          <a class="navbar-brand" href="/#">
+            <img src='./logo192.png' width="80" height="80" alt=""></img>
             </a>
             <Link to="/" className="navbar-brand"><h1>NW+ App</h1></Link>
             <div  className="nav-collapse">

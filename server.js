@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 const userRoutes = express.Router();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 const nodemailer=require('nodemailer');
 const {google}=require('googleapis');
