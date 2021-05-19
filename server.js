@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs')
 const app= express();
 const bodyParser=require('body-parser');
 const cors = require('cors');
@@ -10,13 +11,25 @@ const PORT = process.env.PORT || 8080;
 const nodemailer=require('nodemailer');
 const {google}=require('googleapis');
 
-const CLIENT_ID='974310610770-4nmk0vc8a5i346kcrnevemd7ir7etbl3.apps.googleusercontent.com';
-const CLIENT_SECRET='p8mW7rhwkbWpn3pFZsQdRWjg';
+const CLIENT_ID='488344336628-jtdpe7bf1fk7be0v4lso2bcggtakicb8.apps.googleusercontent.com';
+const CLIENT_SECRET='Iwf08Mst_1QpiYAuDpimsrbW';
 const REDIRECT_URI='https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN='1//04UViiY0SDCS7CgYIARAAGAQSNwF-L9IrDyXAS8eHxdaNDLQP72Lc0TW8tpYFzm0eLtcyWgkQiUFjxpN9EvzeJg6KwnoGj6RmUw8';
+const REFRESH_TOKEN='1//04uCEvQv4zweyCgYIARAAGAQSNwF-L9IrQJxZW4rFNVPARtiICdPvZcuwqKLuwHK045IWsc4IP8oXD3QwQ0FouuQKohi_p3Rs_Tc';
 
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET,REDIRECT_URI);
 oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN});
+
+
+var mailinfo;
+try {
+  mailinfo = fs.readFileSync('./mailinfo.txt', 'utf8')
+//   console.log(mailinfo)
+} catch (err) {
+  console.error(err)
+}
+
+
+console.log(mailinfo)
 
 
 async function sendMail(sendTo){
@@ -26,7 +39,7 @@ async function sendMail(sendTo){
            service: 'gmail',
            auth : {
                type : 'OAuth2',
-               user: 'baryan.edu@gmail.com',
+               user: 'nw.plus.project@gmail.com',
                clientId : CLIENT_ID,
                clientSecret : CLIENT_SECRET,
                refreshToken : REFRESH_TOKEN,
@@ -35,11 +48,11 @@ async function sendMail(sendTo){
        })
 
        const mailOptions= {
-           from: 'Aryan <baryan.edu@gmail.com>',
+           from: 'Aryan <nw.plus.project@gmail.com>',
            to: sendTo,
-           subject: "Hello NW+ Team!",
-           text: 'Wassup broskis',
-           html: '<h1>Wassup broskis</h1>'
+           subject: "Hello World from MailBot9000!",
+           text: '*ignored* lol',
+           html: mailinfo
        };
        
        const result = await transport.sendMail(mailOptions);

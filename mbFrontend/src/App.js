@@ -6,6 +6,7 @@ import { Component } from "react";
 import RegisteredUsers from "./Components/user-list.component"
 import EditUser from "./Components/edit-user.components"
 import CreateUser from "./Components/create-user.component"
+import logo from './bot.png'
 
 class App extends Component{
   render(){
@@ -14,9 +15,9 @@ class App extends Component{
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="/#">
-            <img src='./logo192.png' width="80" height="80" alt=""></img>
+            <img src={logo} width="80" height="80" alt=""></img>
             </a>
-            <Link to="/" className="navbar-brand"><h1>NW+ App</h1></Link>
+            <Link to="/" className="navbar-brand"><h1>MailBot9000</h1></Link>
             <div  className="nav-collapse">
               <ul className="nav nav-bar mr-auto">
                 <li className="navbar-item">

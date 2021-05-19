@@ -110,14 +110,14 @@ export default class CreateUser extends Component{
                                 onChange={this.onChangeEmail}/>
                     </div>
                     <div className="form-group">
-                        <label>Current Major (Area of Study) : </label>
-                        <input  type='text' 
+                        <label>Contact Number : </label>
+                        <input  type='tel' 
                                 className="form-control" 
                                 value={this.state.u_major} 
                                 onChange={this.onChangeMajor}/>
                     </div>
                     <div className="form-group">
-                        <label>Address : </label>
+                        <label>Current Address : </label>
                         <input  type='text' 
                                 className="form-control" 
                                 value={this.state.u_area} 

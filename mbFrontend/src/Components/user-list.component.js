@@ -79,15 +79,15 @@ export default class RegisteredUsers extends Component{
     render() {
         return(
             <div>
-                <h3>All Registered Hackers</h3>
+                <h3 >All Registered Users</h3>
                 <table className="table table-stripped" style={{marginTop:20}}>
                     <thead>
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>Major</th>
-                            <th>Address</th>
+                            <th>Contact No.</th>
+                            <th>Residence Address</th>
                             <th>Delete Record</th>
                             <th>Send Mail</th>
                         </tr>
@@ -96,7 +96,7 @@ export default class RegisteredUsers extends Component{
                         {this.userList()}
                     </tbody>
                 </table>
-            <button className="btn btn-primary" onClick={()=>sendMails()}>Send all Selected Mails</button>
+            <button className="btn btn-primary" onClick={()=>sendMails()}>Send mail to selected Users</button>
             </div>
         )
     }
